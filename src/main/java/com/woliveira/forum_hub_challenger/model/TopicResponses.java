@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity(name = "TopicResponses")
 @Table(name = "topic_responses")
@@ -11,13 +12,15 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of ="id")
+@EqualsAndHashCode(of = "id")
 public class TopicResponses {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private UUID id;
     private String messenger;
+
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
     private boolean solution;
 
@@ -26,7 +29,7 @@ public class TopicResponses {
     private User author;
 
     @ManyToOne
-    @JoinColumn(name = "topic_id")
+    @JoinColumn(name = "topic_post_id")
     private TopicPost topicPost;
 
 }

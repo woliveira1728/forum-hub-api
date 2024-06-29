@@ -6,6 +6,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity(name = "TopicPost")
 @Table(name = "topic_post")
@@ -13,22 +14,28 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of ="id")
+@EqualsAndHashCode(of = "id")
 public class TopicPost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private UUID id;
     private String title;
     private String messenger;
+
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
     private boolean status;
+
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private User author;
 
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;
 
-    @OneToMany(mappedBy = "topic_post")
+    @OneToMany(mappedBy = "topicPost", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TopicResponses> topicResponses = new ArrayList<>();
 
 }

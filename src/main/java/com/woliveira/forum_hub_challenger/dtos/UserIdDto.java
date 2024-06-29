@@ -1,12 +1,14 @@
 package com.woliveira.forum_hub_challenger.dtos;
 
+import java.util.UUID;
+
 public record UserIdDto(
-        Long id,
+        UUID id,
         String name,
         String email,
         boolean status
 ) {
-    public UserIdDto(Long id, String name, String email) {
+    public UserIdDto(UUID id, String name, String email) {
         this(id, name, email, false);
     }
 }

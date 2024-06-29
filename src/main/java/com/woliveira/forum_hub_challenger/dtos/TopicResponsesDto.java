@@ -5,12 +5,13 @@ import com.woliveira.forum_hub_challenger.model.TopicResponses;
 import com.woliveira.forum_hub_challenger.model.User;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public record TopicResponsesDto(
         String messenger,
         boolean solution,
-        Long authorId,
-        Long topicId
+        UUID authorId,
+        UUID topicId
 ) {
     public TopicResponses toEntity(
             User author,

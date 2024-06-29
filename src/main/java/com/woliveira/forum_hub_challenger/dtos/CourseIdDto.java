@@ -1,7 +1,9 @@
 package com.woliveira.forum_hub_challenger.dtos;
 
+import java.util.UUID;
+
 public record CourseIdDto(
-        Long id,
+        UUID id,
         String name,
         String category
 ) {

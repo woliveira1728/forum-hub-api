@@ -1,18 +1,20 @@
 package com.woliveira.forum_hub_challenger.dtos;
 
+import java.util.UUID;
+
 public record TopicPostActivesListDto(
-        Long id,
+        UUID id,
         String title,
         String messenger,
         UserIdDto author,
         CourseIdDto course
 ) {
     public TopicPostActivesListDto(
-        Long id,
-        String title,
-        String messenger,
-        UserIdDto author,
-        CourseIdDto course
+            UUID id,
+            String title,
+            String messenger,
+            UserIdDto author,
+            CourseIdDto course
     ) {
         this.id = id;
         this.title = title;

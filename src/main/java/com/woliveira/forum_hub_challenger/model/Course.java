@@ -5,26 +5,27 @@ import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity(name = "Course")
-@Table(name= "course")
+@Table(name = "course")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of ="id")
+@EqualsAndHashCode(of = "id")
 public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private UUID id;
     private String name;
     private String category;
 
     @OneToMany(mappedBy = "course")
     private List<TopicPost> topicsPosts = new ArrayList<>();
 
-    public Course(Long id, String name, String category) {
+    public Course(UUID id, String name, String category) {
         this.id = id;
         this.name = name;
         this.category = category;
