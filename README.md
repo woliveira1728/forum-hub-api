@@ -12,7 +12,7 @@
     ```bash
     git clone git@github.com:woliveira1728/forum-hub-api.git
     ```
-2. Configure a MySQL database and define connection details and access credentials in the application.properties file
+2. Configure a MySQL database, define connection details and access credentials in the application.properties file
 3. Starting the Server
     ```bash
     mvn spring-boot:run
