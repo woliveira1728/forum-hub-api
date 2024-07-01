@@ -5,6 +5,7 @@
 ## Requirements
 
 - [JAVA (version 17 onwards)](https://www.oracle.com/br/java/technologies/downloads)
+- [Maven](https://maven.apache.org/install.html)
 - [MySQL](https://dev.mysql.com/downloads/mysql/)
 
 ### Cloning and configuring the project
