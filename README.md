@@ -17,6 +17,6 @@
     ```bash
     mvn spring-boot:run
     ```
-4. Navigate to http://localhost:3000 to access the API.
+4. Navigate to http://localhost:8080 to access the API.
 5. Routes
    - Access route documentation at http://localhost:8080/swagger-ui/index.html.
